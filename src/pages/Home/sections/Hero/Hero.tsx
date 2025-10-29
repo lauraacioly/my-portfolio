@@ -1,10 +1,13 @@
-import { Box, Button, Container, Grid, styled, Typography } from "@mui/material"
+import { Box, Container, Grid, styled, Typography } from "@mui/material"
 import Avatar from "../../../../assets/images/avatar.jpeg"
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+
+
+
 
 
 
@@ -15,10 +18,16 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.up("xs")]: {
+            paddingTop: "100px",
+        }, 
+        [theme.breakpoints.up("md")]: {
+            paddingTop: "0px",
+        }
     }))
 
     const StyledImg = styled("img") (() => ({
-        width:"80%",
+        width:"75%",
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.main}`,
     }))
@@ -29,7 +38,7 @@ const Hero = () => {
         <Container maxWidth={"lg"}>
             <Grid container spacing={2}>
                 <Grid size={{ xs: 12, md: 5}}>
-                    <Box position={"relative"}>
+                    <Box position={"relative"} >
                         <Box position={"absolute"} width={"150%"} top={-100} right={0}>
                             <AnimatedBackground />
                         </Box>
